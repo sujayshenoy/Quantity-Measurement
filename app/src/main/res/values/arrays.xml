@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="quantities">
+        <item>Length</item>
+        <item>Weight</item>
+        <item>Volume</item>
+        <item>Temperature</item>
+    </string-array>
+    <string-array name="lengthMeasures">
+        <item>Kilometre</item>
+        <item>Yard</item>
+        <item>Feet</item>
+        <item>Metre</item>
+        <item>Centimetre</item>
+    </string-array>
+    <string-array name="weightMeasures">
+        <item>Ton</item>
+        <item>Kilogram</item>
+        <item>Gram</item>
+    </string-array>
+    <string-array name="volumeMeasures">
+        <item>Cubic metre</item>
+        <item>Litre</item>
+        <item>Millilitre</item>
+    </string-array>
+    <string-array name="temperatureMeasures">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+</resources>
