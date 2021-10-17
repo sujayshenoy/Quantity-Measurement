@@ -13,7 +13,7 @@
         android:layout_marginTop="24dp"
         android:minHeight="48dp"
         app:layout_constraintStart_toEndOf="@+id/measureQuantityM"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/resultQuantity" />
 
     <Spinner
         android:id="@+id/addQuantitySpinner"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/quantity1"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/addQuantitySpinner" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/quantity2"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/addQuantitySpinner" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/resultQuantity"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -68,7 +68,7 @@
         android:layout_marginTop="32dp"
         android:text="+"
         android:textSize="34sp"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toEndOf="@+id/quantity1"
         app:layout_constraintTop_toBottomOf="@+id/addQuantitySpinner" />
 
     <TextView
@@ -79,7 +79,7 @@
         android:layout_marginTop="32dp"
         android:text="="
         android:textSize="34sp"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2"
+        app:layout_constraintStart_toEndOf="@+id/quantity2"
         app:layout_constraintTop_toBottomOf="@+id/addQuantitySpinner" />
 
     <Spinner
@@ -89,7 +89,7 @@
         android:layout_marginTop="25dp"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/quantity1" />
 
     <Spinner
         android:id="@+id/measureQuantityM"
@@ -99,6 +99,6 @@
         android:layout_marginTop="24dp"
         android:minHeight="48dp"
         app:layout_constraintStart_toEndOf="@+id/measureQuantityL"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/quantity2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

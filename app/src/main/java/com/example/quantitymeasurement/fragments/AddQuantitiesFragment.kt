@@ -7,11 +7,10 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.example.quantitymeasurement.R
 import com.example.quantitymeasurement.databinding.AddQuantityFragmentBinding
-import com.example.quantitymeasurement.util.QuantityConverter
+import com.example.quantitymeasurement.util.Utilities
 
 class AddQuantitiesFragment : Fragment(R.layout.add_quantity_fragment) {
     private lateinit var binding: AddQuantityFragmentBinding
-    private lateinit var selectedQuantity:String
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,19 +23,17 @@ class AddQuantitiesFragment : Fragment(R.layout.add_quantity_fragment) {
 
         binding.addQuantitySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                selectedQuantity = binding.addQuantitySpinner.selectedItem.toString()
-                changeSpinners()
+                changeSpinners(binding.addQuantitySpinner.selectedItem.toString())
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                selectedQuantity = "Length"
-                changeSpinners()
+                changeSpinners("Length")
             }
         }
     }
 
-    fun changeSpinners() {
-        var measureAdapter:ArrayAdapter<CharSequence> = QuantityConverter.createMeasureAdapterFromQuantity(requireContext(),
+    fun changeSpinners(selectedQuantity : String) {
+        var measureAdapter:ArrayAdapter<CharSequence> = Utilities.createMeasureAdapterFromQuantity(requireContext(),
             selectedQuantity
         )
         binding.measureQuantityL.adapter = measureAdapter
