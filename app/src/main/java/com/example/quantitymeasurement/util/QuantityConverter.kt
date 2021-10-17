@@ -11,6 +11,12 @@ object QuantityConverter {
         }
     }
 
+    fun addQuantites(parentQuant: String,quant1:String,quant2:String,toQuant:String,lValue:Float,rValue:Float) : Float {
+        val quant1ConvertedValue = convertTo(lValue,parentQuant,quant1,toQuant)
+        val quant2ConvertedValue = convertTo(rValue,parentQuant,quant2,toQuant)
+        return quant1ConvertedValue + quant2ConvertedValue
+    }
+
     private fun convertTemperature(value: Float, fromQuant: String, toQuant: String): Float {
         return when(fromQuant) {
             "Celsius" -> convertCelsius(value,toQuant)
