@@ -85,11 +85,7 @@ class ConvertQuantityFragment : Fragment(R.layout.convert_quantity_fragment) {
     }
 
     fun convertQuantities() {
-        Log.i("fromQuantity",fromQuantity)
-        Log.i("toQuantity",toQuantity)
-        Log.i("value",value.toString())
         val result = QuantityConverter.convertTo(value,selectedQuantity,fromQuantity,toQuantity)
-        Log.i("Converter Result",result.toString())
         binding.toQuantity.setText(result.toString())
     }
 
