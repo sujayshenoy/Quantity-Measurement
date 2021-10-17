@@ -23,15 +23,17 @@ class AddQuantitiesFragment : Fragment(R.layout.add_quantity_fragment) {
         quantityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.addQuantitySpinner.adapter = quantityAdapter
 
+        attachListeners()
+    }
+
+    private fun attachListeners() {
         binding.addQuantitySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 selectedQuantity = binding.addQuantitySpinner.selectedItem.toString()
                 changeSpinners()
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
-            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
         binding.measureQuantityL.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -40,9 +42,7 @@ class AddQuantitiesFragment : Fragment(R.layout.add_quantity_fragment) {
                 addQuantities()
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
-            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
         binding.measureQuantityM.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -51,9 +51,7 @@ class AddQuantitiesFragment : Fragment(R.layout.add_quantity_fragment) {
                 addQuantities()
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
-            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
         binding.measureQuantityR.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -62,15 +60,11 @@ class AddQuantitiesFragment : Fragment(R.layout.add_quantity_fragment) {
                 addQuantities()
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
-            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
         binding.quantity1.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 if (p0.isNullOrEmpty()){
@@ -81,15 +75,11 @@ class AddQuantitiesFragment : Fragment(R.layout.add_quantity_fragment) {
                 addQuantities()
             }
 
-            override fun afterTextChanged(p0: Editable?) {
-
-            }
+            override fun afterTextChanged(p0: Editable?) {}
         })
 
         binding.quantity2.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 if (p0.isNullOrEmpty()){
@@ -100,14 +90,12 @@ class AddQuantitiesFragment : Fragment(R.layout.add_quantity_fragment) {
                 addQuantities()
             }
 
-            override fun afterTextChanged(p0: Editable?) {
-
-            }
+            override fun afterTextChanged(p0: Editable?) {}
         })
     }
 
     fun addQuantities(){
-        val result = QuantityConverter.addQuantites(selectedQuantity, quantity1, quantity2, toQuantity, lvalue,
+        val result = QuantityConverter.addQuantities(selectedQuantity, quantity1, quantity2, toQuantity, lvalue,
             rvalue)
         binding.resultQuantity.setText(result.toString())
     }

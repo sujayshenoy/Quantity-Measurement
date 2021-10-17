@@ -31,15 +31,17 @@ class ConvertQuantityFragment : Fragment(R.layout.convert_quantity_fragment) {
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.quantitySpinner.adapter = arrayAdapter
 
+        attachListeners()
+    }
+
+    private fun attachListeners() {
         binding.quantitySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 selectedQuantity = binding.quantitySpinner.selectedItem.toString()
                 changeSpinners()
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                changeSpinners()
-            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
         binding.measureSpinnerL.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -48,9 +50,7 @@ class ConvertQuantityFragment : Fragment(R.layout.convert_quantity_fragment) {
                 convertQuantities()
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
-            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
         binding.measureSpinnerR.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -59,9 +59,7 @@ class ConvertQuantityFragment : Fragment(R.layout.convert_quantity_fragment) {
                 convertQuantities()
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
-            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
         binding.fromQuantity.addTextChangedListener(object : TextWatcher{
@@ -78,9 +76,7 @@ class ConvertQuantityFragment : Fragment(R.layout.convert_quantity_fragment) {
                 convertQuantities()
             }
 
-            override fun afterTextChanged(p0: Editable?) {
-
-            }
+            override fun afterTextChanged(p0: Editable?) {}
         })
     }
 
